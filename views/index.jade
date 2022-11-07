@@ -1,0 +1,139 @@
+extends layout
+
+block body
+	- if (locals.demo)
+		div.notice-bar this is a demo board. to make a private board, go to <a href="/demo">/demo</a>
+
+	//div.config
+	//	i.fa.fa-cog.fa-lg.faded-icon
+
+	h1 <a href="https://www.upperion.fr">Collab</a> par <a href="https://www.upperion.fr">Upperion</a>
+
+	div.main
+		p#collab
+		div.board-outline
+			div#board
+				div#board-doodles
+					script.
+						var pathArray = window.location.pathname.split('/');
+						if (pathArray[1].includes("CCVP")) {
+							document.getElementById("collab").innerHTML =
+							"CleverCities Value Proposition: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/CLEVERCITIES-Quad-Value-Proposition-v2.png)";
+						} else if (pathArray[1].includes("CCSMC")) {
+							document.getElementById("collab").innerHTML =
+							"CleverCities Societal Model Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/CLEVER-CITIES_Societal-model_Model_Canvas.png)";
+						} else if (pathArray[1].includes("CSVP")) {
+							document.getElementById("collab").innerHTML =
+							"CleverCities Societal Model Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/CLEVER-CITIES_Value-Proposition-Canvas.png)";
+						} else if (pathArray[1].includes("CSSSH")) {
+							document.getElementById("collab").innerHTML =
+							"CleverCities London Workshop Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/CLEVER-CITIES_GSSSH_London.png)";
+						} else if (pathArray[1].includes("SCVPC")) {
+							document.getElementById("collab").innerHTML =
+							"Single Client Value Proposition Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/Classical-Value-Proposition-Canvas.png)";
+						} else if (pathArray[1].includes("STUC")) {
+							document.getElementById("collab").innerHTML =
+							"StoryTelling the UseCase: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/USECASE-CANVAS.png)";
+						} else if (pathArray[1].includes("SIGBD")) {
+							document.getElementById("collab").innerHTML =
+							"SIG Smart Manufacturing Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/SIG_SMARTMANUF_BOARD.png)";
+						} else if (pathArray[1].includes("THVALFR")) {
+							document.getElementById("collab").innerHTML =
+							"Theleme Affectio Societatis Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/TH_ValueShieldBoard-FR.png)";
+						} else if (pathArray[1].includes("THVALEN")) {
+							document.getElementById("collab").innerHTML =
+							"Theleme Affectio Societatis Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/TH_ValueShieldBoard-EN.png)";
+						} else if (pathArray[1].includes("ERPFR")) {
+							document.getElementById("collab").innerHTML =
+							"ERP Canvas (fr): " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/ERP_CANVAS.png)";
+						} else if (pathArray[1].includes("CBMC")) {
+							document.getElementById("collab").innerHTML =
+							"Classical Business Model Canvas: " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/BMC.png)";
+						} else if (pathArray[1].includes("CENTMONT")) {
+							document.getElementById("collab").innerHTML =
+							"CUSI Atelier 2 Montagne : " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/CANVAS-ENTREPRENDRE.png)";
+						} else if (pathArray[1].includes("CUSIATMONT2")) {
+							document.getElementById("collab").innerHTML =
+							"CUSI Atelier 2 Montagne : " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/Cusi-Atelier-2.png)";
+						} else if (pathArray[1].includes("CUSIENTMONT2")) {
+							document.getElementById("collab").innerHTML =
+							"CUSI Atelier Entreprendre 2 Montagne : " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/CANVAS-ENTREPRENDRE-2.png)";
+						} else if (pathArray[1].includes("INNOVCK")) {
+							document.getElementById("collab").innerHTML =
+							"Atelier C-K : " + pathArray[1];
+							document.getElementById("board-doodles").style.backgroundImage="url(images/canvas/C-K_CANVAS.png)";
+						} else {
+							document.getElementById("collab").innerHTML =
+							"Canvas:" + pathArray[1];
+						}
+
+				table#board-table.board-table
+					tr
+						td#icon-col(width='1%')
+	//						image#add-col.col-icon(width='20', height='20', src='images/icons/iconic/raster/black/plus_alt_32x32.png')
+	//						image#delete-col.col-icon(width='20', height='20', src='images/icons/iconic/raster/black/minus_alt_32x32.png')
+
+
+	div.buttons
+		i#create-card.fa.fa-plus-circle.fa-2x.bottom-icon
+		i#create-yellowcard.fa.fa-sticky-note.yellow-bottom-icon
+		i#create-whitecard.fa.fa-sticky-note.white-bottom-icon
+		i#create-greencard.fa.fa-sticky-note.green-bottom-icon
+		i#create-bluecard.fa.fa-sticky-note.blue-bottom-icon
+		i#smallify.fa.fa-expand.fa-2x.bottom-icon
+
+
+
+
+	div.stickers
+		div.sticker#sticker-red
+		div.sticker#sticker-blue
+		div.sticker#sticker-yellow
+		div.sticker#sticker-green
+		br
+		div.sticker#sticker-pink
+		div.sticker#sticker-lightblue
+		div.sticker#sticker-orange
+		div.sticker#sticker-purple
+		div.sticker#sticker-silverstar
+		//div#addsticker
+		br
+		div.sticker#nosticker
+		//br
+		//div.sticker#sticker-gold
+		//	image(src="/images/stickers/sticker-gold.png")
+		//div.sticker#sticker-bluestar
+		//	image(src="/images/stickers/sticker-bluestar.png")
+		//div.sticker#sticker-silverstar
+		//	image(src="/images/stickers/sticker-silverstar.png")
+		//div.sticker#sticker-redstar
+		//	image(src="/images/stickers/sticker-redstar.png")
+
+
+	div.names
+		p Utilisateurs connect&aacutes :
+		image#user-icon(src="/images/icons/cc/black/png/user_icon&16.png")
+		input#yourname-input
+		span.you-text (you)
+		ul#names-ul
+
+	//div.trash
+	//	i.fa.fa-trash-o.fa-lg.faded-icon
+
+	//<div style="width: 980px; height: 450px; border: solid 2px; opacity:.1; margin-top: 100px"> this will be the backlog that only appears on drag or perhaps not at all</div>
+
+//	<script type="text/javascript">	  var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-2069672-4']);  _gaq.push(['_trackPageview']);   (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })(); </script>

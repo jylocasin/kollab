@@ -1,0 +1,68 @@
+doctype html
+html(lang="en")
+	head
+		<!-- SCRIPTS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<!-- FONTS -->
+		<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+
+		//<!-- Include from the CDN
+		<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> </script>
+
+		title Upperion - Collaborative board
+
+body
+	h1 Collab par <a href="https://www.upperion.fr">Upperion</a>
+
+	div.board-outline
+		div#board
+			div#board-blank
+
+
+			table#board-table.board-table
+				tr
+					td
+						h1.home Kollaborate !
+						form.home(onsubmit="return go();")
+							P.home Name your canvas
+							br
+							input.text(type="text", name="name")
+							br
+							select#cars(name='canvas')
+								option(value='CBMC') Classical Business Model Canvas
+								option(value='CSVP') Classical Strategist Value Proposition Canvas
+								option(value='ERPFR') ERP Canvas - FR
+								option(value='CCVP') CleverCities Value Proposition Canvas
+								option(value='CCSMC') CleverCities Business Model Canvas
+								option(value='CSSSH') CleverCities London Workshop Canvas
+								option(value='SCVPC') Single Customer Value Proposition Canvas
+								option(value='STUC') StoryTelling the UseCase
+								option(value='SIGBD') SIG Smart Manufacturing Canvas
+								option(value='THVALFR') Theleme-Innovation - Affectio Societatis FR
+								option(value='THVALEN') Theleme-Innovation - Affectio Societatis EN
+								option(value='CENTMONT') Atelier 1 Montagne FR
+								option(value='CUSIATMONT2') Atelier 2 Vivre Montagne FR
+								option(value='CUSIENTMONT2') Atelier 2 Entreprendre Montagne FR
+								option(value='INNOVCK') Atelier C-K FR
+							a#go(onclick="return go();") &nbsp;go.
+						<br><br>
+
+	div.stickers
+		div.sticker#sticker-red
+		div.sticker#sticker-blue
+		div.sticker#sticker-yellow
+		div.sticker#sticker-green
+		br
+		div.sticker#sticker-pink
+		div.sticker#sticker-lightblue
+		div.sticker#sticker-orange
+		div.sticker#sticker-purple
+		br
+		div.sticker#sticker-gold
+		div.sticker#sticker-bluestar
+		div.sticker#sticker-silverstar
+		div.sticker#sticker-redstar
+
+
+	<script type="text/javascript">function go() {var value_name = document.forms[0].elements["name"].value; var value_canvas = document.forms[0].elements["canvas"].value; var value = value_canvas+"_"+value_name; value = escape(value); window.location.href = value; return false;}</script>
